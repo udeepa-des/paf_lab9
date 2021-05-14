@@ -111,7 +111,7 @@ public class Item {
 			}
 			
 			//create a prepared statement
-			String query = "update item set itemCode=? itemName=?,itemPrice=?,itemDesc=? where itemID=? ";
+			String query = "update item set itemCode=?, itemName=?,itemPrice=?,itemDesc=? where itemID=? ";
 			PreparedStatement pdmst = con.prepareStatement(query);
 			
 			//binding values

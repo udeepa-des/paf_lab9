@@ -58,7 +58,11 @@ if (request.getParameter("hidItemIDDelete") != null) {
 					Item Description: <input type="text" id="itemDesc" name="itemDesc"
 						class="form-control border border-primary form-control-sm"><br>
 
-					<div id="alertSuccess" class="alert alert-success"></div>
+					<div id="alertSuccess" class="alert alert-success">
+						<%
+						out.print(session.getAttribute("statusMsg"));
+						%>
+					</div>
 					<div id="alertError" class="alert alert-danger"></div>
 
 					<input type="button" id="btnSave" name="btnSave" value="Save"
@@ -66,18 +70,10 @@ if (request.getParameter("hidItemIDDelete") != null) {
 						type="hidden" name="hidItemIDSave" id="hidItemIDSave" value="">
 
 				</form>
-				<div id="alertSuccess" class="alert alert-success">
-					<%
-						out.print(session.getAttribute("statusMsg"));
-					%>
-				</div>
-
-				<div id="alertError" class="alert alert-danger"></div>
-
 				<br>
 				<%
 					Item item = new Item();
-				out.print(item.readItems());
+					out.print(item.readItems());
 				%>
 			</div>
 		</div>
