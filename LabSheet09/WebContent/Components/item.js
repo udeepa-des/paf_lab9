@@ -25,8 +25,6 @@ $(document).on("click", "#btnSave", function(event)
 //	If valid------------------------
 	
 	$("#formItem").submit();
-	var item = java();
-	$("#colItem").append(item);
 		});
 //UPDATE==========================================
 $(document).on("click", ".btnUpdate", function(event)
@@ -72,8 +70,3 @@ function validateItemForm()
 	}
 	return true;
 }
-
-function java(){
-	var myClass = Java.type("com.Item")
-	print(myClass.readItems())
-} 

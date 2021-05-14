@@ -1,10 +1,7 @@
 package com;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.Statement;
+import java.sql.*;
+
 
 public class Item {
 	//Database Connection
@@ -45,14 +42,14 @@ public class Item {
 						String itemPrice = Double.toString(rs.getDouble("itemPrice"));
 						String itemDesc = rs.getString("itemDesc");
 						// Add into the html table
-						output += "<tr><td><input id='hidItemIDUpdate' name='hidItemIDUpdate' type='hidden' value='" 
-										+ itemID + "'>"
+						output += "<tr><td><input id=\"hidItemIDUpdate\" name=\"hidItemIDUpdate\" type=\"hidden\" value=\"" 
+										+ itemID + "\">"
 										+ itemCode + "</td>";
 										output += "<td>" + itemName + "</td>";
 										output += "<td>" + itemPrice + "</td>";
 										output += "<td>" + itemDesc + "</td>";
 										// buttons
-										output += "<td><input name='btnUpdate' type='button' value='Update' class=' btnUpdate btn btn-secondary'></td> <td><form method='post' action='items.jsp'> <input name='btnRemove' type='submit' value='Remove' class='btn btn-danger'> <input name='hidItemIDDelete' type='hidden' value='" + itemID + "'>" + "</form></td></tr>";
+										output += "<td><input name=\"btnUpdate\" type=\"button\" value=\"Update\" class=\"btnUpdate btn btn-secondary\"></td> <td><form method=\"post\" action=\"items.jsp\"> <input name=\"btnRemove\" type=\"submit\" value=\"Remove\" class=\"btn btn-danger\"> <input name=\"hidItemIDDelete\" type=\"hidden\" value=\"" + itemID + "\">" + "</form></td></tr>";
 					}
 					con.close();
 					// Complete the html table
